@@ -9,6 +9,7 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     compileSdkVersion 28
+    flavorDimensions "default"
     defaultConfig {
         applicationId "com.loneos.helloworldjenkins"
         minSdkVersion 15
@@ -24,6 +25,36 @@ android {
             storePassword keystoreProperties['helloworldjenkinStorePassword']
             keyAlias keystoreProperties['helloworldjenkinKeyAlias']
             keyPassword keystoreProperties['helloworldjenkinPassword']
+        }
+    }
+
+
+
+    productFlavors {
+
+       /* def liveServerUrls = { productFlavors ->
+            productFlavors.buildConfigField "String", "SHAADI_SOA_URL", "\"http://ww4.shaadi.com/\""
+            productFlavors.buildConfigField "String", "PAYMENT_BASE_URL", "\"https://ww4.shaadi.com/\""
+            productFlavors.buildConfigField "String", "PAYMENT_ACTIVATION_URL", "\"https://pay.shaadi.com/placeorder\""
+            productFlavors.buildConfigField "String", "SHAADI_HTTPS_SOA_BASEURL", "\"https://ww4.shaadi.com/\""
+            productFlavors.buildConfigField "String", "SHAADI_IMG_SOA_BASEURL", "\"https://upload-file.shaadi.com/\""
+            productFlavors.buildConfigField "String", "SHAADI_SECURE_URL", "\"https://secured.shaadi.com/native/\""
+            productFlavors.buildConfigField "String", "SHAADI_URL_NATIVE2_HTTPS", "\"https://www.shaadi.com/native-apps2/\""
+            productFlavors.buildConfigField "String", "SHAADI_URL_NATIVE2_HTTP", "\"http://www.shaadi.com/native-apps2/\""
+            productFlavors.buildConfigField "String", "X_APP_KEY", "\"d6c555cadaa3aa3eb6625c79542bf2291bb469384cdcb2095b0383bdee8b2cc0\""
+            productFlavors.buildConfigField "String", "PLATFORM", "\"native-android\""
+            productFlavors.buildConfigField "String", "APP_TYPE", "\"shaadi\""
+            productFlavors.buildConfigField "String", "APP_PLATFORM", "\"native-android\""
+        }*/
+
+        demo {
+            applicationId "com.loneos.helloworldjenkins"
+
+           /* buildConfigField "String", "SHAADI_URL", "\"http://www.shaadi.com/\""
+            buildConfigField "boolean", "IS_AUTOMATION_BUILD", 'false'
+            buildConfigField "boolean", "IS_MEMORY_CHECK", 'false'
+            liveServerUrls(it)
+            minSdkVersion 21*/
         }
     }
 
