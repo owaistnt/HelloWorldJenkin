@@ -1,13 +1,10 @@
 pipeline{
 
-	agent{
-		docker{image 'javiersantos/android-ci:latest'}
-
-	}
+	agent any
 	stages{
 		stage('Compile'){
 			steps{
-				sh './gradlew clean build'
+				bat './gradlew clean build'
 			}
 		}
 
