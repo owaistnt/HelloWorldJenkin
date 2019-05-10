@@ -1,0 +1,61 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+EN_US="en-US"
+FLAVORS=['demo']
+platform :android do
+
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Copy changelog"
+  private_lane :copyChangeLog do |options|
+       flavor=options[:flavour]
+       community= flavor.sub(/^./, &:upcase)
+       sh("mkdir ./metadata/#{flavor}/#{EN_US}/changelogs/", error_callback: ->(result) { })
+       system "cp ../changelog  ./metadata/#{flavor}/#{EN_US}/changelogs/2.txt"
+  end
+
+  desc "Fetch all metadata of apps"
+  lane :fetchMetadata do
+    FLAVORS.each do |flavor|
+       UI.message("Fetching meta for: #{flavor}")
+       sh("fastlane supply init --metadata_path ./metadata/#{flavor} --package_name com.loneos.helloworldjenkins")
+       copyChangeLog(flavour: flavor)
+   end
+  end
+
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+    lane :beta do
+      gradle(task: "clean")
+
+         UI.message("Fetching meta for: data")
+         gradle(task: "assembleRelease", build_type: 'Release')
+         supply(
+             track: 'beta',
+             package_name: "com.loneos.helloworldjenkins",
+             metadata_path:"./fastlane/metadata/#{flavor}",
+             skip_upload_metadata: false,
+             skip_upload_images: true,
+             skip_upload_screenshots:true,
+             apk: "./app/build/outputs/apk/demo/release/app-demo-release.apk")
+    end
+
+end
