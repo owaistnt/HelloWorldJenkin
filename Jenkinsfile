@@ -1,7 +1,8 @@
 pipeline{
 
 	agent{
-		label 'android'
+		image: javiersantos/android-ci:latest
+
 	}
 	stages{
 		stage('Compile'){
