@@ -1,5 +1,8 @@
 pipeline{
 
+	agent{
+		label 'android'
+	}
 	stages{
 		stage('Compile'){
 			steps{
