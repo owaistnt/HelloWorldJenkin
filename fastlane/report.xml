@@ -5,22 +5,12 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.001756269">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.001837191">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: fastlane supply init --metadata_path ./metadata/demo --package_name com.loneos.helloworldjenkins" time="11.359950624">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="2: Switch to android copyChangeLog lane" time="0.000563185">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="3: mkdir ./metadata/demo/en-US/changelogs/" time="0.001665445">
+      <testcase classname="fastlane.lanes" name="1: fastlane supply init --metadata_path ./metadata/demo --package_name com.loneos.helloworldjenkins" time="0.874891475">
         
       </testcase>
     
