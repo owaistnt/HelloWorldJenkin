@@ -19,7 +19,7 @@ android {
     }
 
     signingConfigs {
-        shaadi {
+        demo {
             storeFile file(keystoreProperties['helloworldjenkinpath']) //Path to the keystore file
             storePassword keystoreProperties['helloworldjenkinStorePassword']
             keyAlias keystoreProperties['helloworldjenkinKeyAlias']
@@ -29,7 +29,7 @@ android {
 
     buildTypes {
         release {
-            productFlavors.shaadi.signingConfig signingConfigs.shaadi
+            productFlavors.demo.signingConfig signingConfigs.demo
 
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
