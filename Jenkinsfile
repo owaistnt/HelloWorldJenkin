@@ -1,7 +1,7 @@
 pipeline{
 
 	stages{
-		stage{
+		stage('Compile'){
 			steps{
 				echo "Hello World"
 				sh './gradlew clean build'
