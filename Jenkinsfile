@@ -4,7 +4,7 @@ pipeline{
 	stages{
     	stage("fastlane"){
     	    steps{
-    	          fastlane test
+    	          fastlane version
        	    }
 
     	}
