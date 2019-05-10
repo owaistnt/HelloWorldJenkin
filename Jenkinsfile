@@ -2,12 +2,11 @@ pipeline{
 
 	agent any
 	stages{
-		stage('Compile'){
-			steps{
-				bat './gradlew clean'
-				bat './gradlew build'
-			}
-		}
+		 stage('Compile') {
+     			 steps {
+        			// Compile the app and its dependencies
+        			bat './gradlew compileDebugSources'
+     			 }
 
 	}
 }
