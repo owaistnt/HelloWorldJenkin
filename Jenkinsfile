@@ -4,7 +4,8 @@ pipeline{
 	stages{
 		stage('Compile'){
 			steps{
-				bat './gradlew clean build'
+				bat './gradlew clean'
+				bat './gradlew build'
 			}
 		}
 
