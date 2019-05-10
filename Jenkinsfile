@@ -21,6 +21,12 @@ pipeline{
        				 junit '**/TEST-*.xml'
      			 }
     	}
+    	stage("fastlane"){
+    	    steps{
+    	          bat 'fastlane test'
+       	    }
+
+    	}
 
 	}
 }
