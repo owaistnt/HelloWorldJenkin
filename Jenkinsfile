@@ -23,7 +23,7 @@ pipeline{
     	}
     	stage("fastlane"){
     	    steps{
-    	          bat 'fastlane test'
+    	          bat './fastlane test'
        	    }
 
     	}
