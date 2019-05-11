@@ -5,12 +5,12 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.001837191">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.001861959">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: fastlane supply init --metadata_path ./metadata/demo --package_name com.loneos.helloworldjenkins" time="0.874891475">
+      <testcase classname="fastlane.lanes" name="1: gradle" time="12.006328923">
         
       </testcase>
     
