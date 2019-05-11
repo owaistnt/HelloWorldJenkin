@@ -47,11 +47,11 @@ platform :android do
       gradle(task: "clean")
 
          UI.message("Fetching meta for: data")
-         gradle(task: "assembleRelease", build_type: 'Release')
+         gradle(task: "assembleDemo", build_type: 'Release')
          supply(
              track: 'beta',
              package_name: "com.loneos.helloworldjenkins",
-             metadata_path:"./fastlane/metadata/#{flavor}",
+             metadata_path:"./fastlane/metadata/demo",
              skip_upload_metadata: false,
              skip_upload_images: true,
              skip_upload_screenshots:true,
